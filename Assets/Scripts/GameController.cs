@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ public class GameController : MonoBehaviour
     RNGHandler rng;
     public List<int> selectedNumbers = new List<int>();
 
-    public int selectionAmount = 3; // 3 is default
+    public int numCount = 70;
+    public int selectionAmount = 20; // 3 is default
     float waitTime = 15f;
 
 
@@ -28,12 +30,27 @@ public class GameController : MonoBehaviour
     {
         scoreMultiplier += 0.05f;
         currentLevel++;
+        // Randomize numbers
         rng.randomize();
+        // Select numbers and lit them up
         rng.selectNumbers();
+        // Show the numbers for 15 seconds then sort the spheres
+        StartCoroutine(waitPhase());
     }
+
+    IEnumerator waitPhase()
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        // do animation here
+            
+
+    }
+
 
     void Start()
     {
         rng = FindObjectOfType<RNGHandler>();
+        advanceLevel();
     }
 }
