@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        advanceLevel();
         rng = FindObjectOfType<RNGHandler>();
     }
 }
