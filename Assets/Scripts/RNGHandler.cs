@@ -1,41 +1,49 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
-using TMPro;
+using UnityEditor;
 using UnityEngine;
 public class RNGHandler : MonoBehaviour
 {
-    // Function variables
-    GameController gameController;
+    // Class variables
+    [SerializeField] GameController gc;
+
     // Lists
-    public List<int> numbers = new List<int>();
-    public List<GameObject> spheres = new List<GameObject>();
-    // Randomizes numbers so that duplicates don't appear
+    [SerializeField] List<GameObject> spheres = new List<GameObject>();
+    [SerializeField] List<Material> materials = new List<Material>();
+
+
+    // Randomizes sphere numbers so that duplicates don't appear 
     public void randomize()
     {
-        numbers.Clear();
-        List<int> allNums = new List<int>();
-        for (int i = 0; i < gameController.numCount; i++) allNums.Add(i);
-        for (int i = 0; i < gameController.numCount; i++)
+
+        // Shuffle the material list here
+        List<Material> shuffledMats = new List<Material>();
+        for (int i = 0; i < gc.numCount; i++)
         {
-            int selectedNum = Random.Range(0, allNums.Count);
-            numbers.Add(allNums[selectedNum]);
-            // Adds numbers to spheres
-            spheres[i].GetComponentInChildren<TMP_Text>().text = allNums[selectedNum].ToString();
-            allNums.Remove(allNums[selectedNum]);
+            int selectedNum = Random.Range(0, materials.Count);
+            shuffledMats.Add(materials[selectedNum]);
+            materials.Remove(materials[selectedNum]);
+
+            // Add materials to spheres
+
+            spheres[i].GetComponent<MeshRenderer>().material = shuffledMats[i];
+            spheres[i].GetComponent<Rigidbody>().mass = Random.Range(1, 5); 
+
         }
+
+        materials = shuffledMats;
     }
-    public void selectNumbers()
+
+    // Selects spheres for the ticket
+    public void selectSpheres()
     {
-        gameController.selectedNumbers.Clear();
-        while (gameController.selectedNumbers.Count < gameController.selectionAmount)
+        gc.selectedNumbers.Clear();
+
+        while (gc.selectedNumbers.Count < gc.selectionAmount)
         {
-            int selectedIndex = Random.Range(0, numbers.Count);
-            if (!gameController.selectedNumbers.Contains(numbers[selectedIndex])) gameController.selectedNumbers.Add(numbers[selectedIndex]);
+            int selectedIndex = Random.Range(0, gc.numCount);
+            if (!gc.selectedNumbers.Contains(spheres[selectedIndex])) gc.selectedNumbers.Add(spheres[selectedIndex]);
         }
-    }
-    void Start()
-    {
-        gameController = FindObjectOfType<GameController>();
-        randomize();
-        selectNumbers();
+
     }
 }
