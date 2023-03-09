@@ -6,39 +6,37 @@ public class GameController : MonoBehaviour
     // Level variables etc.
     int currentLevel = 0;
     int highScore = 0;
-    float scoreMultiplier = 1f;
     // Other
     RNGHandler rng;
-    public List<int> selectedNumbers = new List<int>();
+    public List<GameObject> selectedNumbers = new List<GameObject>();
     public int numCount = 70;
     public int selectionAmount = 20; // 3 is default
     float waitTime = 15f;
-    float countScore()
+
+    public void gameOver()
     {
-        return Mathf.Round((currentLevel * 50) * scoreMultiplier);
+        highScore = currentLevel;
+        
     }
-    void advanceLevel()
-    {
-        scoreMultiplier += 0.05f;
-        currentLevel++;
-        // Randomize numbers
-        rng.randomize();
-        // Select numbers and lit them up
-        rng.selectNumbers();
-        // Show the numbers for 15 seconds then sort the spheres
-        StartCoroutine(waitPhase());
-    }
+
     IEnumerator waitPhase()
     {
         yield return new WaitForSeconds(waitTime);
         // do animation here
 
-        for(int i = 0; i < rng.spheres.Count; i++)
-        {
-            
-        }
-
     }
+
+    public void advanceLevel()
+    {
+        currentLevel++;
+        // Randomize numbers
+        rng.randomize();
+        // Select numbers and lit them up
+        rng.selectSpheres();
+        // Show the numbers for 15 seconds then sort the spheres
+        StartCoroutine(waitPhase());
+    }
+
     void Start()
     {
         rng = FindObjectOfType<RNGHandler>();
