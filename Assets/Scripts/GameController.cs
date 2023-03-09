@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public int numCount = 70;
     public int selectionAmount = 20; // 3 is default
     float waitTime = 15f;
+    [SerializeField] Color selectedColor;
     float countScore()
     {
         return Mathf.Round((currentLevel * 50) * scoreMultiplier);
@@ -30,13 +31,14 @@ public class GameController : MonoBehaviour
     }
     IEnumerator waitPhase()
     {
+        foreach (var item in rng.spheres)
+        {
+            item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
+        }
+
         yield return new WaitForSeconds(waitTime);
         // do animation here
 
-        for(int i = 0; i < rng.spheres.Count; i++)
-        {
-            
-        }
 
     }
     void Start()
