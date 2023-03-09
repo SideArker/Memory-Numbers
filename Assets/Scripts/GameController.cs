@@ -57,6 +57,14 @@ public class GameController : MonoBehaviour
 
     }
 
+    //private void Update()
+    //{
+    //    foreach (var item in selectedNumbers)
+    //    {
+    //        item.transform.rotation = Quaternion.EulerAngles(0,item.transform.rotation.y, item.transform.rotation.z);
+    //    }
+    //}
+
     [Button] void TestColor()
     {
         selectedNumbers[0].GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
