@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public List<GameObject> selectedNumbers = new List<GameObject>();
     public int numCount = 70;
     public int selectionAmount = 20; // 3 is default
+    public int numbersToSelect = 3;
+
+    int maxNumbersToSelect = 10;
     float waitTime = 15f;
 
     public void gameOver()
@@ -29,6 +32,8 @@ public class GameController : MonoBehaviour
     public void advanceLevel()
     {
         currentLevel++;
+        if(numbersToSelect < maxNumbersToSelect && currentLevel % 2 == 0) numbersToSelect += 1;
+
         // Randomize numbers
         rng.randomize();
         // Select numbers and lit them up

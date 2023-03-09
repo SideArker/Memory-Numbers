@@ -26,7 +26,8 @@ public class RNGHandler : MonoBehaviour
 
             // Add materials to spheres
 
-            spheres[i].GetComponentInChildren<MeshRenderer>().material = shuffledMats[i];
+            spheres[i].GetComponent<MeshRenderer>().material = shuffledMats[i];
+            spheres[i].GetComponent<Rigidbody>().mass = Random.Range(1, 5); 
 
         }
 
