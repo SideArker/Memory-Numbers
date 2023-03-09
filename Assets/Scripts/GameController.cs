@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using Unity.VisualScripting;
+using Unity.Mathematics;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -17,14 +19,17 @@ public class GameController : MonoBehaviour
     public int numbersToSelect = 3;
 
     int maxNumbersToSelect = 10;
-    [SerializeField] float waitTime = 15f;
+    [SerializeField] TimeBar time;
+    [SerializeField] float waitTime;
     [SerializeField] Color selectedColor;
     [SerializeField] GameObject coupon;
 
     Animator animator;
-    
+    bool colorTrans = false;
+
     void Start()
     {
+        waitTime = time.maxTime;
         rng = FindObjectOfType<RNGHandler>();
         advanceLevel();
         animator = GetComponent<Animator>();
@@ -36,6 +41,7 @@ public class GameController : MonoBehaviour
         
     }
 
+
     IEnumerator waitPhase()
     {
         Debug.Log("Wait Phase...");
@@ -43,10 +49,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(5);
         // do animation here
 
-        foreach (var item in selectedNumbers)
-        {
-            item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
-        }
+        colorTrans = true;
 
         yield return new WaitForSeconds(waitTime);
 
@@ -57,13 +60,23 @@ public class GameController : MonoBehaviour
 
     }
 
-    //private void Update()
-    //{
-    //    foreach (var item in selectedNumbers)
-    //    {
-    //        item.transform.rotation = Quaternion.EulerAngles(0,item.transform.rotation.y, item.transform.rotation.z);
-    //    }
-    //}
+    private void Update()
+    {
+        if (colorTrans)
+        {
+            foreach (var item in selectedNumbers)
+            {
+                item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.Lerp(item.GetComponent<MeshRenderer>().material.GetColor("_EmissionColor"), selectedColor, Time.deltaTime * 2));
+            }
+        }
+        foreach (var item in selectedNumbers)
+        {
+            Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 90, 0);
+
+            
+            item.transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 2 * Time.deltaTime);
+        }
+    }
 
     [Button] void TestColor()
     {

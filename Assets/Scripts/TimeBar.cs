@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class TimeBar : MonoBehaviour
     public float currentTime;
     public float maxTime = 15f;
     float lerpValue;
-    bool gameIsActive = true;
+    bool gameIsActive = false;
 
     private void Start()
     {
@@ -20,11 +21,16 @@ public class TimeBar : MonoBehaviour
 
     void Update()
     {
-        if(gameIsActive) TimerStart();
+        if(gameIsActive) Timer();
           
     }
 
-    void TimerStart()
+    [Button] public void TimerStart()
+    {
+        gameIsActive = true;
+    }
+
+    void Timer()
     {
         if (currentTime > 0)
         {
