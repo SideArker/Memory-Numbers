@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
     int maxNumbersToSelect = 10;
     float waitTime = 15f;
     [SerializeField] Color selectedColor;
-    float countScore()
 
     public void gameOver()
     {
@@ -26,7 +25,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator waitPhase()
     {
-        foreach (var item in rng.spheres)
+        foreach (var item in selectedNumbers)
         {
             item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
         }
