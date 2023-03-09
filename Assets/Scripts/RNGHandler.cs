@@ -7,7 +7,7 @@ public class RNGHandler : MonoBehaviour
     GameController gameController;
     // Lists
     public List<int> numbers = new List<int>();
-    [SerializeField] List<GameObject> spheres = new List<GameObject>();
+    public List<GameObject> spheres = new List<GameObject>();
     // Randomizes numbers so that duplicates don't appear
     public void randomize()
     {

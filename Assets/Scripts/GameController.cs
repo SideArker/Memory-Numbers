@@ -33,6 +33,11 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         // do animation here
 
+        for(int i = 0; i < rng.spheres.Count; i++)
+        {
+            
+        }
+
     }
     void Start()
     {
