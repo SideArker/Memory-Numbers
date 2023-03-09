@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+using Unity.VisualScripting;
+
 public class GameController : MonoBehaviour
 {
     // Level variables etc.
@@ -14,8 +17,18 @@ public class GameController : MonoBehaviour
     public int numbersToSelect = 3;
 
     int maxNumbersToSelect = 10;
-    float waitTime = 15f;
+    [SerializeField] float waitTime = 15f;
     [SerializeField] Color selectedColor;
+    [SerializeField] GameObject coupon;
+
+    Animator animator;
+    
+    void Start()
+    {
+        rng = FindObjectOfType<RNGHandler>();
+        advanceLevel();
+        animator = GetComponent<Animator>();
+    }
 
     public void gameOver()
     {
@@ -25,15 +38,28 @@ public class GameController : MonoBehaviour
 
     IEnumerator waitPhase()
     {
+        Debug.Log("Wait Phase...");
+
+        yield return new WaitForSeconds(5);
+        // do animation here
+
         foreach (var item in selectedNumbers)
         {
-            item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
+            item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
         }
 
         yield return new WaitForSeconds(waitTime);
-        // do animation here
 
+        animator.Play("CameraDown");
+        yield return new WaitForSeconds(1);
 
+        coupon.SetActive(true);
+
+    }
+
+    [Button] void TestColor()
+    {
+        selectedNumbers[0].GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
     }
 
     public void advanceLevel()
@@ -49,9 +75,4 @@ public class GameController : MonoBehaviour
         StartCoroutine(waitPhase());
     }
 
-    void Start()
-    {
-        rng = FindObjectOfType<RNGHandler>();
-        advanceLevel();
-    }
 }
