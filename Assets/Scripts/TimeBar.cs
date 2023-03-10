@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,21 +11,28 @@ public class TimeBar : MonoBehaviour
     public float currentTime;
     public float maxTime = 15f;
     float lerpValue;
-    bool gameIsActive = true;
+    bool gameIsActive = false;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         currentTime = maxTime;
         image = GetComponent<Image>();
+
     }
 
     void Update()
     {
-        if(gameIsActive) TimerStart();
+        if(gameIsActive) Timer();
           
     }
 
-    void TimerStart()
+    [Button] public void TimerStart()
+    {
+        gameIsActive = true;
+    }
+
+    void Timer()
     {
         if (currentTime > 0)
         {
@@ -37,7 +45,7 @@ public class TimeBar : MonoBehaviour
         {
             image.fillAmount = 0;
 
-            //miejsce na dalsze funkcje
+            animator.Play("TimerOut");
 
         }
 

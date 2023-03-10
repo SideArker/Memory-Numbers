@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour
 {
@@ -20,9 +21,7 @@ public class MenuSystem : MonoBehaviour
 
     public void ResumeButtonClick()
     {
-        animator.ResetTrigger("open");
-        animator.SetTrigger("close");
-        Time.timeScale = 1f;
+        SceneManager.LoadScene("SampleScene");
     }
 
 
