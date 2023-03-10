@@ -11,12 +11,13 @@ public class GameController : MonoBehaviour
     int highScore = 0;
     // Other
     RNGHandler rng;
-    public List<GameObject> selectedNumbers = new List<GameObject>();
+    public List<GameObject> selectedGameObjects = new List<GameObject>();
+    public List<int> selectedNumbers = new List<int>();
     public int numCount = 70;
     public int selectionAmount = 20; // 3 is default
     public int numbersToSelect = 3;
 
-    int maxNumbersToSelect = 10;
+    int maxNumbersToSelect = 12;
     [SerializeField] float waitTime = 15f;
     [SerializeField] Color selectedColor;
     [SerializeField] GameObject coupon;
@@ -43,7 +44,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(5);
         // do animation here
 
-        foreach (var item in selectedNumbers)
+        foreach (var item in selectedGameObjects)
         {
             item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
         }
@@ -67,7 +68,7 @@ public class GameController : MonoBehaviour
 
     [Button] void TestColor()
     {
-        selectedNumbers[0].GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
+        selectedGameObjects[0].GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
     }
 
     public void advanceLevel()

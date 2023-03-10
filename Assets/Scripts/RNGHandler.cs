@@ -1,5 +1,7 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 public class RNGHandler : MonoBehaviour
@@ -20,14 +22,14 @@ public class RNGHandler : MonoBehaviour
         List<Material> shuffledMats = new List<Material>();
         for (int i = 0; i < gc.numCount; i++)
         {
-            int selectedNum = Random.Range(0, materials.Count);
+            int selectedNum = UnityEngine.Random.Range(0, materials.Count);
             shuffledMats.Add(materials[selectedNum]);
             materials.Remove(materials[selectedNum]);
 
             // Add materials to spheres
 
             spheres[i].GetComponent<MeshRenderer>().material = shuffledMats[i];
-            spheres[i].GetComponent<Rigidbody>().mass = Random.Range(1, 5); 
+            spheres[i].GetComponent<Rigidbody>().mass = UnityEngine.Random.Range(1, 5); 
 
         }
 
@@ -41,8 +43,18 @@ public class RNGHandler : MonoBehaviour
 
         while (gc.selectedNumbers.Count < gc.selectionAmount)
         {
-            int selectedIndex = Random.Range(0, gc.numCount);
-            if (!gc.selectedNumbers.Contains(spheres[selectedIndex])) gc.selectedNumbers.Add(spheres[selectedIndex]);
+            int selectedIndex = UnityEngine.Random.Range(0, gc.numCount);
+            if (!gc.selectedGameObjects.Contains(spheres[selectedIndex])) 
+            {
+                gc.selectedGameObjects.Add(spheres[selectedIndex]);
+
+                // Get the number of the sphere
+                string matName = spheres[selectedIndex].GetComponent<MeshRenderer>().material.name;
+                int sphereNum = Convert.ToInt32(Regex.Replace(matName, "[^.0-9]", ""));
+
+                gc.selectedNumbers.Add(sphereNum);
+
+            } 
         }
 
     }
