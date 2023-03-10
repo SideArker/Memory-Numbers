@@ -19,6 +19,7 @@ public class Coupon : MonoBehaviour
     [SerializeField] GameController gc;
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject winScreen;
+    [SerializeField] Animator levelAnim;
 
 
 
@@ -27,6 +28,7 @@ public class Coupon : MonoBehaviour
     {
         int rightNumbers = 0;
         animator.Play("CouponHide");
+        levelAnim.Play("LevelOut");
         foreach (int number in selectedNums)
         {
             if (gc.selectedNumbers.Contains(number)) 
@@ -56,7 +58,7 @@ public class Coupon : MonoBehaviour
     }
     IEnumerator CouoponHide()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("SampleScene");
         this.gameObject.SetActive(false);
     }

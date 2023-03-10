@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
         rng = FindObjectOfType<RNGHandler>();
         advanceLevel();
         animator = GetComponent<Animator>();
+        time.gameObject.transform.parent.GetComponent<Animator>().Play("TimerIn");
     }
     public void gameOver()
     {
@@ -72,9 +73,9 @@ public class GameController : MonoBehaviour
         }
     }
     [Button]
-    void TestColor()
+    void ResetLevel()
     {
-        selectedGameObjects[0].GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", selectedColor);
+        PlayerPrefs.SetInt("currentLevel", 0);
     }
     public void advanceLevel()
     {

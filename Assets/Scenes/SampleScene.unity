@@ -3198,11 +3198,11 @@ RectTransform:
   - {fileID: 508008703}
   - {fileID: 1435465079}
   m_Father: {fileID: 1524059023}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -540}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: -160}
+  m_AnchoredPosition: {x: 160, y: 140}
   m_SizeDelta: {x: 239.81, y: 239.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &669533095
@@ -6504,8 +6504,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 157464300}
-  - {fileID: 669533094}
   - {fileID: 1526595482}
+  - {fileID: 669533094}
   - {fileID: 5351231441446538263}
   m_Father: {fileID: 1880068897}
   m_RootOrder: 1
@@ -6526,6 +6526,7 @@ GameObject:
   - component: {fileID: 1526595482}
   - component: {fileID: 1526595484}
   - component: {fileID: 1526595483}
+  - component: {fileID: 1526595485}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -6540,17 +6541,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526595481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1524059023}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -90}
+  m_AnchoredPosition: {x: -199.90955, y: 217.10315}
   m_SizeDelta: {x: 320.48975, y: 101.117004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526595483
@@ -6650,6 +6651,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526595481}
   m_CullTransparentMesh: 1
+--- !u!95 &1526595485
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526595481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10dab06dc243df34a864d43e1dca8b18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &1534726406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3760473812357053927, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
@@ -27496,7 +27517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Wybierz liczby kt\xF3re zapami\u0119ta\u0142e\u015B"
+  m_text: "Wybierz zapami\u0119tane liczby."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -34105,6 +34126,7 @@ MonoBehaviour:
   gc: {fileID: 519420033}
   gameOverScreen: {fileID: 238976251}
   winScreen: {fileID: 1227221467}
+  levelAnim: {fileID: 1526595485}
 --- !u!224 &5351231441446538263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40869,7 +40891,7 @@ Animator:
   m_GameObject: {fileID: 5351231441446538265}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2d7c4d21ddd2be74a9a2e791e322b112, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4847b258139126f4197f305edf53dc4e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
