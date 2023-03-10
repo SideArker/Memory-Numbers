@@ -5,6 +5,7 @@ using NaughtyAttributes;
 using Unity.VisualScripting;
 using Unity.Mathematics;
 using System;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject coupon;
 
     Animator animator;
-    bool colorTrans = false;
+    bool selected = false;
 
     void Start()
     {
@@ -49,8 +50,9 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(5);
         // do animation here
 
-        colorTrans = true;
+        selected = true;
 
+        time.TimerStart();
         yield return new WaitForSeconds(waitTime);
 
         animator.Play("CameraDown");
@@ -62,19 +64,19 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (colorTrans)
+        if (selected)
         {
             foreach (var item in selectedNumbers)
             {
                 item.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.Lerp(item.GetComponent<MeshRenderer>().material.GetColor("_EmissionColor"), selectedColor, Time.deltaTime * 2));
             }
-        }
-        foreach (var item in selectedNumbers)
-        {
-            Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 90, 0);
+            foreach (var item in selectedNumbers)
+            {
+                Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 90, 0);
 
             
-            item.transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 2 * Time.deltaTime);
+                item.transform.rotation = Quaternion.Lerp(item.transform.rotation, targetRotation, 2 * Time.deltaTime);
+            }
         }
     }
 
