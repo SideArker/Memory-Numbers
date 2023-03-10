@@ -10,7 +10,11 @@ public class MenuSystem : MonoBehaviour
     [SerializeField] Animator animator;
     TimeBar timebar;
 
+    public void GoBackToMenu()
+    {
+        StartCoroutine(HideAnimMenu());
 
+    }
 
     public void PauseButtonClick()
     {
@@ -29,5 +33,11 @@ public class MenuSystem : MonoBehaviour
         animator.Play("Hide");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SampleScene");
+    }
+    IEnumerator HideAnimMenu()
+    {
+        animator.Play("Hide");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
     }
 }

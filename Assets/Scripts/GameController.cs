@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     Animator animator;
     bool selected = false;
     [SerializeField] TMP_Text levelText;
+
     void Start()
     {
         waitTime = time.maxTime;

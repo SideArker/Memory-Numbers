@@ -20,6 +20,7 @@ public class Coupon : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject winScreen;
     [SerializeField] Animator levelAnim;
+    [SerializeField] TMP_Text score;
 
 
 
@@ -54,6 +55,7 @@ public class Coupon : MonoBehaviour
             Debug.Log("Wrong numbers");
             PlayerPrefs.SetInt("currentLevel", 0);
             gameOverScreen.SetActive(true);
+            score.text = $"Dotar³eœ do rundy {PlayerPrefs.GetInt("currentLevel")}\r\nTwój wynik w tej rundzie to:\r\n{rightNumbers}/{gc.numbersToSelect}\r\npoprawnych odpowiedzi";
         }
     }
     IEnumerator CouoponHide()
