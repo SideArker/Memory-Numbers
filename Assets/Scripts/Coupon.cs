@@ -8,27 +8,57 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Coupon : MonoBehaviour
 {
 
     List<int> selectedNums = new List<int>();
     [SerializeField] Animator[] Strokes;
+    [SerializeField] Animator animator;
     [SerializeField] GameController gc;
+    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject winScreen;
+
+
 
 
     void checkSelected()
     {
-
-        foreach(int number in selectedNums)
+        int rightNumbers = 0;
+        animator.Play("CouponHide");
+        foreach (int number in selectedNums)
         {
-            if (!gc.selectedNumbers.Contains(number)) Debug.Log("Wrong selection");
-            else
+            if (gc.selectedNumbers.Contains(number)) 
             {
-
+                rightNumbers++;
             }
         }
-
+        if (rightNumbers == gc.numbersToSelect)
+        {
+            Debug.Log("Right numbers");
+            if(PlayerPrefs.GetInt("currentLevel") == 5)
+            {
+                winScreen.SetActive(true);
+                PlayerPrefs.SetInt("currentLevel",0);
+            }
+            else
+            {
+                StartCoroutine(CouoponHide());
+            }
+        }
+        else
+        {
+            Debug.Log("Wrong numbers");
+            PlayerPrefs.SetInt("currentLevel", 0);
+            gameOverScreen.SetActive(true);
+        }
+    }
+    IEnumerator CouoponHide()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("SampleScene");
+        this.gameObject.SetActive(false);
     }
 
     public void couponShow()
@@ -56,10 +86,10 @@ public class Coupon : MonoBehaviour
             selectedNums.Remove(number);
             button.GetComponentInParent<Animator>().Play("StrokeBack");
         }
-        else 
-        { 
-            selectedNums.Add(number); 
-            button.GetComponentInParent<Animator>().Play("Stroke"); 
+        else
+        {
+            selectedNums.Add(number);
+            button.GetComponentInParent<Animator>().Play("Stroke");
         }
 
 

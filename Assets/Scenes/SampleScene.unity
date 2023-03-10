@@ -2172,6 +2172,7 @@ MonoBehaviour:
   waitTime: 2
   selectedColor: {r: 0.6226415, g: 0.31506354, b: 0, a: 1}
   coupon: {fileID: 5351231441446538265}
+  levelText: {fileID: 1526595483}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34100,7 +34101,10 @@ MonoBehaviour:
   - {fileID: 2870548787576389854}
   - {fileID: 7302060684779984934}
   - {fileID: 8137962949202708440}
+  animator: {fileID: 7678121618277185186}
   gc: {fileID: 519420033}
+  gameOverScreen: {fileID: 238976251}
+  winScreen: {fileID: 1227221467}
 --- !u!224 &5351231441446538263
 RectTransform:
   m_ObjectHideFlags: 0

@@ -6,10 +6,11 @@ using Unity.VisualScripting;
 using Unity.Mathematics;
 using System;
 using UnityEngine.UIElements;
+using TMPro;
+
 public class GameController : MonoBehaviour
 {
     // Level variables etc.
-    int currentLevel = 0;
     int highScore = 0;
     // Other
     RNGHandler rng;
@@ -17,15 +18,17 @@ public class GameController : MonoBehaviour
     public List<int> selectedNumbers = new List<int>();
 
     public int numCount = 70;
-    public int selectionAmount = 20; 
-    public int numbersToSelect = 3; // 3 is default
-    int maxNumbersToSelect = 10;
+    public int selectionAmount = 20;
+    public int numbersToSelect; // 3 is default
+    int maxNumbersToSelect = 12;
+    int[] levelsOfNumbers = { 3, 5, 8, 10, 12 };
     [SerializeField] TimeBar time;
     [SerializeField] float waitTime;
     [SerializeField] Color selectedColor;
     [SerializeField] GameObject coupon;
     Animator animator;
     bool selected = false;
+    [SerializeField] TMP_Text levelText;
     void Start()
     {
         waitTime = time.maxTime;
@@ -35,7 +38,7 @@ public class GameController : MonoBehaviour
     }
     public void gameOver()
     {
-        highScore = currentLevel;
+        highScore = PlayerPrefs.GetInt("currentLevel");
 
     }
     IEnumerator waitPhase()
@@ -75,8 +78,9 @@ public class GameController : MonoBehaviour
     }
     public void advanceLevel()
     {
-        currentLevel++;
-        if (numbersToSelect < maxNumbersToSelect && currentLevel % 2 == 0) numbersToSelect += 1;
+        PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel")+1);
+        levelText.text = $"Runda {PlayerPrefs.GetInt("currentLevel")}";
+        if (numbersToSelect < maxNumbersToSelect) numbersToSelect = levelsOfNumbers[PlayerPrefs.GetInt("currentLevel") -1];
         // Randomize numbers
         rng.randomize();
         // Select numbers and lit them up
