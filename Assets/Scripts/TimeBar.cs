@@ -12,11 +12,13 @@ public class TimeBar : MonoBehaviour
     public float maxTime = 15f;
     float lerpValue;
     bool gameIsActive = false;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         currentTime = maxTime;
         image = GetComponent<Image>();
+
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class TimeBar : MonoBehaviour
         {
             image.fillAmount = 0;
 
-            //miejsce na dalsze funkcje
+            animator.Play("TimerOut");
 
         }
 
