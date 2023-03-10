@@ -22,7 +22,7 @@ public class Coupon : MonoBehaviour
 
         foreach(int number in selectedNums)
         {
-            if (gc.selectedNumbers.Contains(number)) Debug.Log("Wrong selection");
+            if (!gc.selectedNumbers.Contains(number)) Debug.Log("Wrong selection");
             else
             {
 
@@ -33,7 +33,7 @@ public class Coupon : MonoBehaviour
 
     public void couponShow()
     {
-        Strokes[gc.selectionAmount].Play("Stroke");
+        Strokes[gc.numbersToSelect - 1].Play("Stroke");
     }
 
     public void select()
