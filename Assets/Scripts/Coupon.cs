@@ -2,12 +2,9 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System.Text.RegularExpressions;
-using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class Coupon : MonoBehaviour
@@ -53,9 +50,9 @@ public class Coupon : MonoBehaviour
         else
         {
             Debug.Log("Wrong numbers");
-            PlayerPrefs.SetInt("currentLevel", 0);
             gameOverScreen.SetActive(true);
             score.text = $"Dotar³eœ do rundy {PlayerPrefs.GetInt("currentLevel")}\r\nTwój wynik w tej rundzie to:\r\n{rightNumbers}/{gc.numbersToSelect}\r\npoprawnych odpowiedzi";
+            PlayerPrefs.SetInt("currentLevel", 0);
         }
     }
     IEnumerator CouoponHide()
