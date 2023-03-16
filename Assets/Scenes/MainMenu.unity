@@ -605,6 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720622364}
   - component: {fileID: 1720622365}
+  - component: {fileID: 1720622366}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -644,6 +645,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720622363}
   m_CullTransparentMesh: 1
+--- !u!95 &1720622366
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720622363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58d74b1c3fb6b314796e17f4f4331315, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1817731606
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +813,6 @@ GameObject:
   - component: {fileID: 2058691818}
   - component: {fileID: 2058691817}
   - component: {fileID: 2058691821}
-  - component: {fileID: 2058691820}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -867,26 +887,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2058691820
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058691813}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58d74b1c3fb6b314796e17f4f4331315, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2058691821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47ff3702c51cd846a20c8ca935efd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2058691820}
+  animator: {fileID: 1720622366}
 --- !u!1 &2061682455
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1919, y: 1080}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061682457
 MonoBehaviour:

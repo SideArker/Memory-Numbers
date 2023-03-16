@@ -1,35 +1,36 @@
-using System.Collections;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Coupon : MonoBehaviour
 {
 
     List<int> selectedNums = new List<int>();
+    [Header("Animators")]
     [SerializeField] Animator[] Strokes;
     [SerializeField] Animator animator;
+    [SerializeField] Animator levelAnim;
+
+    [Header("Classes & Objects")]
     [SerializeField] GameController gc;
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject winScreen;
-    [SerializeField] Animator levelAnim;
     [SerializeField] TMP_Text score;
 
 
-
-
-    void checkSelected()
+    void CheckSelected()
     {
         int rightNumbers = 0;
         animator.Play("CouponHide");
         levelAnim.Play("LevelOut");
         foreach (int number in selectedNums)
         {
-            if (gc.selectedNumbers.Contains(number)) 
+            if (gc.selectedNumbers.Contains(number))
             {
                 rightNumbers++;
             }
@@ -37,14 +38,14 @@ public class Coupon : MonoBehaviour
         if (rightNumbers == gc.numbersToSelect)
         {
             Debug.Log("Right numbers");
-            if(PlayerPrefs.GetInt("currentLevel") == 5)
+            if (PlayerPrefs.GetInt("currentLevel") == 5)
             {
                 winScreen.SetActive(true);
-                PlayerPrefs.SetInt("currentLevel",0);
+                PlayerPrefs.SetInt("currentLevel", 0);
             }
             else
             {
-                StartCoroutine(CouoponHide());
+                StartCoroutine(CouponHide());
             }
         }
         else
@@ -55,19 +56,19 @@ public class Coupon : MonoBehaviour
             PlayerPrefs.SetInt("currentLevel", 0);
         }
     }
-    IEnumerator CouoponHide()
+    IEnumerator CouponHide()
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("SampleScene");
         this.gameObject.SetActive(false);
     }
 
-    public void couponShow()
+    public void CouponShow()
     {
         Strokes[gc.numbersToSelect - 1].Play("Stroke");
     }
 
-    public void select()
+    public void Select()
     {
         // Get the button that was pressed
         GameObject button = EventSystem.current.currentSelectedGameObject;
@@ -93,12 +94,9 @@ public class Coupon : MonoBehaviour
             button.GetComponentInParent<Animator>().Play("Stroke");
         }
 
-
         if (selectedNums.Count >= gc.numbersToSelect)
         {
-            checkSelected();
+            CheckSelected();
         }
-
-
     }
 }

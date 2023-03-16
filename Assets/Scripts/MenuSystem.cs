@@ -1,29 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour
 {
-
-    [SerializeField] GameObject pauseScreen;
+    [Header("Objects")]
     [SerializeField] Animator animator;
-    TimeBar timebar;
-
-    public void GoBackToMenu()
+    public void BackToMainMenu()
     {
         StartCoroutine(HideAnimMenu());
 
     }
-
-    public void PauseButtonClick()
-    {
-        animator.ResetTrigger("close");
-        animator.SetTrigger("open");
-        Time.timeScale = 0f;
-    }
-
-    public void ResumeButtonClick()
+    public void CloseUI()
     {
         StartCoroutine(HideAnim());
     }

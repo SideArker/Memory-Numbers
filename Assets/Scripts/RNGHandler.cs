@@ -1,23 +1,20 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using UnityEditor;
 using UnityEngine;
 public class RNGHandler : MonoBehaviour
 {
-    // Class variables
-    [SerializeField] GameController gc;
 
-    // Lists
+    [Header("Lists")]
     [SerializeField] List<GameObject> spheres = new List<GameObject>();
     [SerializeField] List<Material> materials = new List<Material>();
 
+    GameController gc;
 
     // Randomizes sphere numbers so that duplicates don't appear 
-    public void randomize()
+    public void Randomize()
     {
-
+        gc = GetComponent<GameController>();
         // Shuffle the material list here
         List<Material> shuffledMats = new List<Material>();
         for (int i = 0; i < gc.numCount; i++)
@@ -27,24 +24,22 @@ public class RNGHandler : MonoBehaviour
             materials.Remove(materials[selectedNum]);
 
             // Add materials to spheres
-
             spheres[i].GetComponent<MeshRenderer>().material = shuffledMats[i];
-            spheres[i].GetComponent<Rigidbody>().mass = UnityEngine.Random.Range(1, 5); 
-
+            spheres[i].GetComponent<Rigidbody>().mass = UnityEngine.Random.Range(1, 5);
         }
-
         materials = shuffledMats;
     }
 
     // Selects spheres for the ticket
-    public void selectSpheres()
+    public void SelectSpheres()
     {
+        gc = GetComponent<GameController>();
         gc.selectedNumbers.Clear();
 
         while (gc.selectedNumbers.Count < gc.selectionAmount)
         {
             int selectedIndex = UnityEngine.Random.Range(0, gc.numCount);
-            if (!gc.selectedGameObjects.Contains(spheres[selectedIndex])) 
+            if (!gc.selectedGameObjects.Contains(spheres[selectedIndex]))
             {
                 gc.selectedGameObjects.Add(spheres[selectedIndex]);
 
@@ -53,9 +48,7 @@ public class RNGHandler : MonoBehaviour
                 int sphereNum = Convert.ToInt32(Regex.Replace(matName, "[^.0-9]", ""));
 
                 gc.selectedNumbers.Add(sphereNum);
-
-            } 
+            }
         }
-
     }
 }

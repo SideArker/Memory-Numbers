@@ -823,7 +823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 725638994}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
         m_MethodName: PauseButtonClick
         m_Mode: 1
@@ -878,84 +878,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3760473812357053931, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
   m_PrefabInstance: {fileID: 1233583426}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &169712384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 169712385}
-  - component: {fileID: 169712387}
-  - component: {fileID: 169712386}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &169712385
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169712384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 588182248}
-  - {fileID: 1070059035}
-  m_Father: {fileID: 725638996}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -721.859, y: -479.45}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &169712386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169712384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 618217a0b751ffe4582332645ba97780, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &169712387
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169712384}
-  m_CullTransparentMesh: 1
 --- !u!4 &182339330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3760473812357053927, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
@@ -1120,7 +1042,7 @@ RectTransform:
   m_Children:
   - {fileID: 789825925}
   m_Father: {fileID: 1880068897}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1139,7 +1061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8043b5c31cfdef4ca146c287a8baf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 238976251}
   animator: {fileID: 238976254}
 --- !u!95 &238976254
 Animator:
@@ -2023,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  maxTime: 15
+  maxTime: 3
   animator: {fileID: 669533096}
 --- !u!114 &508008705
 MonoBehaviour:
@@ -2167,9 +2088,9 @@ MonoBehaviour:
   numCount: 70
   selectionAmount: 20
   numbersToSelect: 3
-  time: {fileID: 508008704}
-  waitTime: 2
+  timerWaitTime: 1
   selectedColor: {r: 0.6226415, g: 0.31506354, b: 0, a: 1}
+  time: {fileID: 508008704}
   coupon: {fileID: 5351231441446538265}
   levelText: {fileID: 1526595483}
 --- !u!114 &519420034
@@ -2184,7 +2105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d653a47fffb68d945a4945a73503d851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 519420033}
   spheres:
   - {fileID: 1202570172}
   - {fileID: 2089836131}
@@ -2337,7 +2257,7 @@ Animator:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c36053b0690711246a3c151ab00ba481, type: 2}
+  m_Controller: {fileID: 9100000, guid: 670a67df6b43e2447a20d2b986fc5f7c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2588,139 +2508,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
---- !u!1 &588182247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 588182248}
-  - component: {fileID: 588182251}
-  - component: {fileID: 588182250}
-  - component: {fileID: 588182249}
-  m_Layer: 5
-  m_Name: ResetButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &588182248
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588182247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 169712385}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221, y: 88.207}
-  m_SizeDelta: {x: 164.094, y: 152.673}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &588182249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588182247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 588182250}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 725638994}
-        m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
-        m_MethodName: ResumeButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &588182250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588182247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce33a6503efb5e84f84259b982f2c7cb, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &588182251
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588182247}
-  m_CullTransparentMesh: 1
 --- !u!1 &591366384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3760473812357053931, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
@@ -2821,7 +2608,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 238976253}
         m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
-        m_MethodName: ResumeButtonClick
+        m_MethodName: CloseUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3379,79 +3166,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3760473812357053931, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
   m_PrefabInstance: {fileID: 1150177316}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &725638993
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 725638996}
-  - component: {fileID: 725638995}
-  - component: {fileID: 725638994}
-  m_Layer: 5
-  m_Name: PauseScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &725638994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725638993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8043b5c31cfdef4ca146c287a8baf23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 725638993}
-  animator: {fileID: 725638995}
---- !u!95 &725638995
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725638993}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 61109be4cb082d142bdb1a52580224f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!224 &725638996
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725638993}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 169712385}
-  m_Father: {fileID: 1880068897}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &746733323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4342,7 +4056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227221469}
         m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
-        m_MethodName: ResumeButtonClick
+        m_MethodName: CloseUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4667,82 +4381,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7879a64035ac80c4180dfce552eba437, type: 3}
---- !u!1 &1070059034
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1070059035}
-  - component: {fileID: 1070059037}
-  - component: {fileID: 1070059036}
-  m_Layer: 5
-  m_Name: MenuButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1070059035
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070059034}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 169712385}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235, y: 87}
-  m_SizeDelta: {x: 161.501, y: 161.501}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1070059036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070059034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44a1da2990259174bbc4bef39ef11e40, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1070059037
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070059034}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1073520123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5177,7 +4815,7 @@ RectTransform:
   m_Children:
   - {fileID: 1507131065}
   m_Father: {fileID: 1880068897}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5196,7 +4834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8043b5c31cfdef4ca146c287a8baf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 1227221467}
   animator: {fileID: 1227221470}
 --- !u!95 &1227221470
 Animator:
@@ -5758,7 +5395,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227221469}
         m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
-        m_MethodName: GoBackToMenu
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6014,8 +5651,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11.149}
-  m_SizeDelta: {x: 1920, y: 1097}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404928930
 MonoBehaviour:
@@ -6557,7 +6194,7 @@ RectTransform:
   - {fileID: 669533094}
   - {fileID: 5351231441446538263}
   m_Father: {fileID: 1880068897}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8077,7 +7714,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 725638996}
   - {fileID: 1524059023}
   - {fileID: 238976252}
   - {fileID: 1227221468}
@@ -8639,7 +8275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 238976253}
         m_TargetAssemblyTypeName: MenuSystem, Assembly-CSharp
-        m_MethodName: GoBackToMenu
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9195,7 +8831,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9436,7 +9072,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9752,7 +9388,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9893,7 +9529,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10026,7 +9662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10209,7 +9845,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11022,7 +10658,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11353,7 +10989,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11533,7 +11169,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12242,7 +11878,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12634,7 +12270,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12882,7 +12518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13415,7 +13051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15016,7 +14652,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15465,7 +15101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15759,7 +15395,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16094,7 +15730,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16360,7 +15996,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19395,7 +19031,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20804,7 +20440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22141,7 +21777,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22274,7 +21910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22823,7 +22459,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23147,7 +22783,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24718,7 +24354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25081,7 +24717,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25214,7 +24850,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25499,7 +25135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26429,7 +26065,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26695,7 +26331,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27019,7 +26655,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27102,7 +26738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27462,7 +27098,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27854,7 +27490,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28193,7 +27829,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28326,7 +27962,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28762,7 +28398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29305,7 +28941,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29485,7 +29121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30017,7 +29653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30221,7 +29857,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30315,7 +29951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30681,7 +30317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30764,7 +30400,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31119,7 +30755,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31559,7 +31195,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31749,7 +31385,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33846,7 +33482,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34249,10 +33885,10 @@ MonoBehaviour:
   - {fileID: 7302060684779984934}
   - {fileID: 8137962949202708440}
   animator: {fileID: 7678121618277185186}
+  levelAnim: {fileID: 1526595485}
   gc: {fileID: 519420033}
   gameOverScreen: {fileID: 238976251}
   winScreen: {fileID: 1227221467}
-  levelAnim: {fileID: 1526595485}
   score: {fileID: 986303427}
 --- !u!224 &5351231441446538263
 RectTransform:
@@ -34343,7 +33979,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34743,7 +34379,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34915,7 +34551,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35425,7 +35061,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35508,7 +35144,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36367,7 +36003,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36663,7 +36299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37164,7 +36800,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37344,7 +36980,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37597,7 +37233,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37759,7 +37395,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38135,7 +37771,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38268,7 +37904,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38522,7 +38158,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38740,7 +38376,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39273,7 +38909,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39567,7 +39203,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39720,7 +39356,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39853,7 +39489,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39986,7 +39622,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40091,7 +39727,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40782,7 +40418,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5351231441446538260}
         m_TargetAssemblyTypeName: Coupon, Assembly-CSharp
-        m_MethodName: select
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
