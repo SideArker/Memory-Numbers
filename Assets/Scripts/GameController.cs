@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        ResetLevel();
         waitTime = time.maxTime;
         rng = FindObjectOfType<RNGHandler>();
         advanceLevel();
@@ -56,6 +57,8 @@ public class GameController : MonoBehaviour
         coupon.SetActive(true);
         yield return new WaitForSeconds(1);
         coupon.GetComponent<Coupon>().couponShow();
+        yield return new WaitForSeconds(waitTime);
+        selected = false;
     }
     private void Update()
     {
