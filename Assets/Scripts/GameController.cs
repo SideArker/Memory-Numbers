@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     [Header("Lists")]
     public List<GameObject> selectedGameObjects = new List<GameObject>();
     public List<int> selectedNumbers = new List<int>();
-    int[] levelsOfNumbers = { 3, 5, 8, 10, 12 };
+    readonly int[] levelsOfNumbers = { 3, 5, 8, 10, 12 };
 
     [Header("Game Settings")]
     public int numCount = 70;
@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
     [SerializeField] float timerWaitTime = 1f;
     [SerializeField] Color selectedColor;
 
-    float waitTime = 1f;
-    int maxNumbersToSelect = 12;
+    const float waitTime = 1f;
+    const int maxNumbersToSelect = 12;
 
     [Header("Objects")]
     [SerializeField] TimeBar time;
