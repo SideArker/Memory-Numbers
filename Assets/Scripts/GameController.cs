@@ -1,9 +1,7 @@
-using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -47,15 +45,15 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(5);
         // do animation here
         selected = true;
-        time.TimerStart();
+        time.timerStart = true;
         yield return new WaitForSeconds(timerWaitTime);
         animator.Play("CameraDown");
+        selected = false;
         yield return new WaitForSeconds(waitTime);
         coupon.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         coupon.GetComponent<Coupon>().CouponShow();
-        yield return new WaitForSeconds(waitTime);
-        selected = false;
+
     }
     private void Update()
     {
