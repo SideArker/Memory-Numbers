@@ -9,15 +9,13 @@ public class RNGHandler : MonoBehaviour
     [SerializeField] List<GameObject> spheres = new List<GameObject>();
     [SerializeField] List<Material> materials = new List<Material>();
 
-    GameController gc;
 
     // Randomizes sphere numbers so that duplicates don't appear 
     public void Randomize()
     {
-        gc = GetComponent<GameController>();
         // Shuffle the material list here
         List<Material> shuffledMats = new List<Material>();
-        for (int i = 0; i < gc.numCount; i++)
+        for (int i = 0; i < GameController.numCount; i++)
         {
             int selectedNum = UnityEngine.Random.Range(0, materials.Count);
             shuffledMats.Add(materials[selectedNum]);
@@ -33,12 +31,12 @@ public class RNGHandler : MonoBehaviour
     // Selects spheres for the ticket
     public void SelectSpheres()
     {
-        gc = GetComponent<GameController>();
+        GameController gc = GetComponent<GameController>();
         gc.selectedNumbers.Clear();
 
-        while (gc.selectedNumbers.Count < gc.selectionAmount)
+        while (gc.selectedNumbers.Count < GameController.selectionAmount)
         {
-            int selectedIndex = UnityEngine.Random.Range(0, gc.numCount);
+            int selectedIndex = UnityEngine.Random.Range(0, GameController.numCount);
             if (!gc.selectedGameObjects.Contains(spheres[selectedIndex]))
             {
                 gc.selectedGameObjects.Add(spheres[selectedIndex]);

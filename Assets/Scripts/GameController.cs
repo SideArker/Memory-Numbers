@@ -15,8 +15,8 @@ public class GameController : MonoBehaviour
     readonly int[] levelsOfNumbers = { 3, 5, 8, 10, 12 };
 
     [Header("Game Settings")]
-    public int numCount = 70;
-    public int selectionAmount = 20;
+    public const int numCount = 70;
+    public const int selectionAmount = 20;
     public int numbersToSelect;
     [SerializeField] float timerWaitTime = 1f;
     [SerializeField] Color selectedColor;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        timerWaitTime = time.maxTime;
+        timerWaitTime = TimeBar.maxTime;
         rng = FindObjectOfType<RNGHandler>();
         AdvanceLevel();
         animator = GetComponent<Animator>();

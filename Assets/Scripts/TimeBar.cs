@@ -5,7 +5,7 @@ public class TimeBar : MonoBehaviour
 {
     [Header("Time variables")]
     public float currentTime;
-    public float maxTime = 15f;
+    public const float maxTime = 15f;
 
     Image image;
     float lerpValue;
